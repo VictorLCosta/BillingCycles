@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Api.CrossCutting.DependencyInjection;
 
 namespace Application
 {
@@ -25,6 +26,8 @@ namespace Application
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDataDependencies(_config);
+            services.AddServicesDependencies(_config);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
