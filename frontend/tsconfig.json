@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "noImplicitAny": true,
+        "module": "es6",
+        "allowJs": true,
+        "jsx": "react-jsx",
+        "outDir": "./dist/",
+        "moduleResolution": "Node",
+        "allowSyntheticDefaultImports": true
+    }
+}
