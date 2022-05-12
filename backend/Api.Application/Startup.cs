@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Api.CrossCutting.DependencyInjection;
+using Api.Data.Transactions;
 
 namespace Application
 {
@@ -38,6 +39,14 @@ namespace Application
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.Use(async (context, next) => {
+                await next.Invoke();
+
+                var unitOfWork = (IUow)context.RequestServices.GetService(typeof(IUow));
+                await unitOfWork.Commit();
+                unitOfWork.Dispose();
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
