@@ -1,4 +1,7 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Api.Domain.DTO.Credit;
+using Api.Domain.DTO.Debt;
 
 namespace Api.Domain.DTO.BillingCycle
 {
@@ -12,5 +15,8 @@ namespace Api.Domain.DTO.BillingCycle
 
         [Range(1987, 2100, ErrorMessage = "Por favor, informe um ano entre 1987 e 2100")]
         public int Year { get; set; }
+
+        public IEnumerable<CreateCreditDto> Credits { get; set; }
+        public IEnumerable<CreateDebtDto> Debts { get; set; }
     }
 }

@@ -37,6 +37,21 @@ namespace Api.Application.Controllers
             return Ok(billingCycle);
         }
 
+        [HttpGet("summary")]
+        public async Task<IActionResult> Summary()
+        {
+            try
+            {
+                var result = await _billingCycleService.GetSummary();
+
+                return Ok(result);
+            }
+            catch (System.Exception e)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
+
         [HttpGet("count")]
         public async Task<IActionResult> Count()
         {

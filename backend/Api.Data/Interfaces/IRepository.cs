@@ -12,6 +12,7 @@ namespace Api.Data.Interfaces
         Task<T> AddAsync(T entity);
         Task<T> Update(T entity);
         Task<bool> Remove(Guid id);
+        IQueryable<T> Queryable();
         IQueryable<T> FindBy(Expression<Func<T, bool>> predicate);
         Task<bool> ExistAsync(Guid id);
         Task<T> GetAsync(Guid id);

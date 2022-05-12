@@ -67,6 +67,11 @@ namespace Api.Data.Repositories
             }
         }
 
+        public IQueryable<T> Queryable()
+        {
+            return _context.Set<T>().AsQueryable();
+        }
+
         public async Task<bool> Remove(Guid id)
         {
             try

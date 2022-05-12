@@ -23,11 +23,15 @@ namespace Api.CrossCutting.AutoMapper
             CreateMap<Credit, CreditDto>()
                 .ReverseMap();
 
-            
+            CreateMap<Credit, CreateCreditDto>()
+                .ReverseMap();
+
 
             CreateMap<Debt, DebtDto>()
                 .ReverseMap();
 
+            CreateMap<Debt, CreateDebtDto>()
+                .ReverseMap();
             
         }
     }
