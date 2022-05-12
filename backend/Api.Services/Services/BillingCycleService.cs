@@ -24,7 +24,7 @@ namespace Api.Services.Services
         }
 
 
-        public async Task<CreateBillingCycleResultDto> Create(BillingCycleDto model)
+        public async Task<CreateBillingCycleResultDto> Create(CreateBillingCycleDto model)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace Api.Services.Services
 
                 var result = await _uow.BillingCycles.AddAsync(billingCycle);
 
-                return _mapper.Map<CreateBillingCycleResultDto>(model);
+                return _mapper.Map<CreateBillingCycleResultDto>(result);
             }
             catch (System.Exception)
             {

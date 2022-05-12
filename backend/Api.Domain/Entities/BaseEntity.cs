@@ -11,6 +11,7 @@ namespace Api.Domain.Entities
         public BaseEntity()
         {
             Id = Guid.NewGuid();
+            CreatedAt = DateTime.Now;
         }
 
         private DateTime? _createDate;

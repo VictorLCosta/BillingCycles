@@ -27,6 +27,11 @@ namespace Application
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
+
             services.AddDataDependencies(_config);
             services.AddServicesDependencies(_config);
 
@@ -34,6 +39,7 @@ namespace Application
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Application", Version = "v1" });
+                c.ResolveConflictingActions(x => x.First());
             });
         }
 
@@ -51,7 +57,10 @@ namespace Application
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Application v1"));
+                app.UseSwaggerUI(c => {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Application v1");
+                    c.RoutePrefix = "swagger";
+                });
             }
 
             app.UseHttpsRedirection();

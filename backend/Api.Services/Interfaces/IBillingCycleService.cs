@@ -12,7 +12,7 @@ namespace Api.Services.Interfaces
         Task<BillingCycleDto> GetById(Guid id);
         Task<int> CountBillingCycles();
 
-        Task<CreateBillingCycleResultDto> Create(BillingCycleDto model);
+        Task<CreateBillingCycleResultDto> Create(CreateBillingCycleDto model);
         Task<bool> Delete(Guid id);
     }
 }
