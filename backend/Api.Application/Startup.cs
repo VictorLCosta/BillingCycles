@@ -35,6 +35,15 @@ namespace Application
             services.AddDataDependencies(_config);
             services.AddServicesDependencies(_config);
 
+            services.AddCors(opt => 
+            {
+                opt.AddPolicy("Default", policy => {
+                    policy.WithOrigins("http://localhost:3000/")
+                          .AllowAnyMethod()
+                          .AllowAnyHeader();
+                });
+            });
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -64,6 +73,7 @@ namespace Application
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("Default");
             app.UseRouting();
             app.UseAuthorization();
 
