@@ -1,0 +1,61 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Application frontend",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --config webpack/webpack.config.js --open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorLCosta/BillingCycles.git"
+  },
+  "author": "VictorLCosta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VictorLCosta/BillingCycles/issues"
+  },
+  "homepage": "https://github.com/VictorLCosta/BillingCycles#readme",
+  "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.0",
+    "@babel/plugin-transform-runtime": "^7.18.0",
+    "@babel/preset-env": "^7.18.0",
+    "@babel/preset-react": "^7.17.12",
+    "@babel/preset-typescript": "^7.17.12",
+    "@babel/runtime": "^7.18.0",
+    "@types/fork-ts-checker-webpack-plugin": "^0.4.5",
+    "@types/node": "^17.0.35",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.5",
+    "@types/react-redux": "^7.1.24",
+    "@types/redux": "^3.6.0",
+    "@types/redux-form": "^8.3.5",
+    "@types/redux-promise": "^0.5.29",
+    "@types/redux-thunk": "^2.1.0",
+    "admin-lte": "^3.2.0",
+    "axios": "^0.27.2",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "font-awesome": "^4.7.0",
+    "fork-ts-checker-webpack-plugin": "^7.2.11",
+    "html-webpack-plugin": "^5.5.0",
+    "ionicons": "^6.0.1",
+    "mini-css-extract-plugin": "^2.6.0",
+    "react-redux": "^8.0.2",
+    "react-redux-toastr": "^7.6.8",
+    "redux": "^4.2.0",
+    "redux-form": "^8.3.8",
+    "redux-multi": "^0.1.12",
+    "redux-thunk": "^2.4.1",
+    "typescript": "^4.6.4",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
+  }
+}
