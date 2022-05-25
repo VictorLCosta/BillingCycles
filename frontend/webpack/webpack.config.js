@@ -42,7 +42,12 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        extensions: ['.tsx', '.ts', '.js'],
+        alias: {
+            modules: path.resolve(__dirname, '..', './node_modules'),
+            jquery: 'modules/jquery/src/jquery.js',
+            bootstrap: 'modules/admin-lte/bootstrap/js/bootstrap.js'
+        }
     },
     output: {
         path: path.resolve(__dirname, '..', './build'),

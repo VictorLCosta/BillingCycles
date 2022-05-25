@@ -4,7 +4,7 @@
   "description": "Application frontend",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --config webpack/webpack.config.js --open",
+    "start": "webpack serve --config webpack/webpack.config.js --open --stats-error-details",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,6 +29,7 @@
     "@babel/preset-typescript": "^7.17.12",
     "@babel/runtime": "^7.18.0",
     "@types/fork-ts-checker-webpack-plugin": "^0.4.5",
+    "@types/jquery": "^3.5.14",
     "@types/node": "^17.0.35",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
@@ -46,6 +47,7 @@
     "fork-ts-checker-webpack-plugin": "^7.2.11",
     "html-webpack-plugin": "^5.5.0",
     "ionicons": "^6.0.1",
+    "jquery": "^3.6.0",
     "mini-css-extract-plugin": "^2.6.0",
     "react-redux": "^8.0.2",
     "react-redux-toastr": "^7.6.8",

@@ -1,6 +1,8 @@
+import '../common/template/dependencies'
+
 const App = (props: any) => {
     return (
-        <div className="app">
+        <div className="wrapper">
             App
         </div>
     )
