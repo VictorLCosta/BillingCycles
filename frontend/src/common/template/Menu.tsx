@@ -8,7 +8,7 @@ const Menu = (props: any) => {
             <div className="sidebar">
                 <nav className="mt-2">
                     <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <MenuItem path="#" label="Dashboard" icon="tachometer-alt"/>
+                        <MenuItem path="dashboard" label="Dashboard" icon="tachometer-alt"/>
                         <MenuTree label="Cadastro" icon="edit">
                             <MenuItem label="Ciclo de Pagamentos" path="billingCycles" icon="dollar-sign"/>
                         </MenuTree>

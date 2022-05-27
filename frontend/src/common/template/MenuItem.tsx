@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+ 
 interface MenuItemProps {
     path: string,
     label: string,
@@ -7,12 +9,12 @@ interface MenuItemProps {
 const MenuItem = (props: MenuItemProps) => {
     return (
         <li className="nav-item">
-            <a href={props.path} className="nav-link">
+            <Link to={props.path} className="nav-link">
                 <i className={`nav-icon fas fa-${props.icon}`} />
                 <p>
                     {props.label}
                 </p>
-            </a>
+            </Link>
         </li>
     )
 }

@@ -6,7 +6,7 @@ const Header = (props: any) => {
         <header className="main-header navbar navbar-expand navbar-light navbar-cyan">
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <a className="nav-link sidebar-toggle text-light" data-toggle="push-menu" role="button" href="#">
+                    <a className="nav-link text-light" data-widget="pushmenu" role="button" href="#">
                         <FontAwesomeIcon icon={faBars} />
                     </a>
                 </li>
