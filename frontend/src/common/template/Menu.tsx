@@ -1,18 +1,17 @@
+import MenuItem from "./MenuItem"
+import MenuTree from "./MenuTree"
+
 const Menu = (props: any) => {
     return (
         <>
             {/*Sidebar menu*/}
             <div className="sidebar">
                 <nav className="mt-2">
-                    <ul className="nav nav-pills nav-sidebar flex-column" data-widget="tree" role="menu" data-accordion="false">
-                        <li className="nav-item">
-                            <a href="pages/widgets.html" className="nav-link">
-                                <i className="nav-icon fas fa-th" />
-                                <p>
-                                    Widgets
-                                </p>
-                            </a>
-                        </li>
+                    <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <MenuItem path="#" label="Dashboard" icon="tachometer-alt"/>
+                        <MenuTree label="Cadastro" icon="edit">
+                            <MenuItem label="Ciclo de Pagamentos" path="billingCycles" icon="dollar-sign"/>
+                        </MenuTree>
                     </ul>
                 </nav>
             </div>

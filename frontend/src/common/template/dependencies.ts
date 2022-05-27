@@ -7,6 +7,7 @@ import 'admin-lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars'
 import 'admin-lte/plugins/overlayScrollbars/js/OverlayScrollbars'
 
 import 'admin-lte/plugins/fontawesome-free/css/all.min.css'
+import 'modules/font-awesome/css/font-awesome.min.css'
 import 'modules/admin-lte/dist/css/adminlte.min.css'
 import 'modules/admin-lte/plugins/jquery-knob/jquery.knob.min'
 import 'modules/admin-lte/plugins/jqvmap/jquery.vmap.min'
