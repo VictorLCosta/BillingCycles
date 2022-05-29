@@ -51,7 +51,8 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, '..', './build'),
-        filename: 'app.js'
+        filename: 'app.js',
+        publicPath: '/'
     },
     plugins: [
         new webpack.ProvidePlugin({
@@ -77,5 +78,6 @@ module.exports = {
         static: path.join(__dirname, "..", "build"),
         compress: true,
         port: 8000,
+        historyApiFallback: true
     }
 }
