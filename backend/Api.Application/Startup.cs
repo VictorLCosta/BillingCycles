@@ -38,7 +38,7 @@ namespace Application
             services.AddCors(opt => 
             {
                 opt.AddPolicy("Default", policy => {
-                    policy.WithOrigins("http://localhost:3000/")
+                    policy.WithOrigins("http://localhost:8000")
                           .AllowAnyMethod()
                           .AllowAnyHeader();
                 });

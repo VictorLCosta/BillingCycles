@@ -1,12 +1,19 @@
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
+import dashboardReducers from './reducers/dashboardReducers';
+import promiseMiddleware from 'redux-promise';
 
 const rootReducer = combineReducers({
-
+    dashboard: dashboardReducers
 })
 
 function configStore () {
-    return createStore(rootReducer, composeWithDevTools())
+    const middlewares = [thunk, promiseMiddleware]
+
+    return createStore(rootReducer, composeWithDevTools(applyMiddleware(...middlewares)))
 }
 
 export default configStore
+
+export type State = ReturnType<typeof rootReducer>
