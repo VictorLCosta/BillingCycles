@@ -3,9 +3,11 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import dashboardReducers from './reducers/dashboardReducers';
 import promiseMiddleware from 'redux-promise';
+import tabReducers from "./reducers/tabReducers";
 
 const rootReducer = combineReducers({
-    dashboard: dashboardReducers
+    dashboard: dashboardReducers,
+    tab: tabReducers
 })
 
 function configStore () {

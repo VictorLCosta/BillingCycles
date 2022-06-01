@@ -13,10 +13,10 @@ const BillingCycles = (props: any) => {
             <Content>
                 <Tabs>
                     <TabsHeader>
-                        <TabHeader label="Listar" icon="bars" target="#tabList" first/>
-                        <TabHeader label="Incluir" icon="plus" target="#tabCreate" first={false}/>
-                        <TabHeader label="Alterar" icon="edit" target="#tabUpdate" first={false}/>
-                        <TabHeader label="Excluir" icon="trash" target="#tabDelete" first={false}/>
+                        <TabHeader label="Listar" icon="bars" target="#tabList"/>
+                        <TabHeader label="Incluir" icon="plus" target="#tabCreate"/>
+                        <TabHeader label="Alterar" icon="edit" target="#tabUpdate"/>
+                        <TabHeader label="Excluir" icon="trash" target="#tabDelete"/>
                     </TabsHeader>
                     <TabsContent>
                         

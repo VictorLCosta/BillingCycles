@@ -1,14 +1,23 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import * as tabActionCreators from '../../store/actionCreators/tabActions'
+import { State } from '../../store/storeConfig'
+
 interface TabHeaderProps {
     icon: string,
     label: string
     target: string
-    first: boolean
 }
 
 const TabHeader = (props: TabHeaderProps) => {
+    const dispatch = useDispatch()
+    const { selectTab } = bindActionCreators(tabActionCreators, dispatch)
+    const state = useSelector((state: State) => state.tab)
+
     return (
         <li className="nav-item" role="presentation">
-            <button className={`nav-link ${props.first ? 'active': ''}`} data-bs-toogle="tab" data-bs-target={props.target} type="button" role="tab" aria-selected={`${props.first}`}>
+            <button onClick={() => selectTab(props.target)} className={`nav-link ${state.selected == props.target ? 'active' : ''}`} data-bs-toogle="tab" data-bs-target={props.target} type="button" role="tab">
                 <i className={`fas fa-${props.icon}`}></i> {props.label}
             </button>
         </li>
