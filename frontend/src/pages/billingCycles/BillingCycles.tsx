@@ -4,6 +4,7 @@ import ContentHeader from "../../common/template/ContentHeader"
 import Tabs from "../../common/tab/Tabs"
 import TabsHeader from "../../common/tab/TabsHeader"
 import TabsContent from "../../common/tab/TabsContent"
+import TabHeader from "../../common/tab/TabHeader"
 
 const BillingCycles = (props: any) => {
     return (
@@ -12,7 +13,10 @@ const BillingCycles = (props: any) => {
             <Content>
                 <Tabs>
                     <TabsHeader>
-
+                        <TabHeader label="Listar" icon="bars" target="#tabList" first/>
+                        <TabHeader label="Incluir" icon="plus" target="#tabCreate" first={false}/>
+                        <TabHeader label="Alterar" icon="edit" target="#tabUpdate" first={false}/>
+                        <TabHeader label="Excluir" icon="trash" target="#tabDelete" first={false}/>
                     </TabsHeader>
                     <TabsContent>
                         
