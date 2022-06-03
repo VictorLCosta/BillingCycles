@@ -8,3 +8,15 @@ export const selectTab = (tabId: string) => {
         })
     }
 }
+
+export const showTabs = (...tabsId: any) => {
+    const tabsToShow: boolean[] = []
+    tabsId.forEach((e: any) => tabsToShow[e] = true)
+
+    return (dispatch: Dispatch) => {
+        dispatch({
+            type: 'TAB_SHOWED',
+            payload: tabsToShow
+        })
+    }
+}

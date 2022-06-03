@@ -7,7 +7,22 @@ import TabsContent from "../../common/tab/TabsContent"
 import TabHeader from "../../common/tab/TabHeader"
 import TabContent from "../../common/tab/TabContent"
 
+import { useDispatch, useSelector } from "react-redux"
+import { State } from "../../store/storeConfig"
+import * as tabActionCreators from '../../store/actionCreators/tabActions'
+import { useEffect } from "react"
+import { bindActionCreators } from "redux"
+
 const BillingCycles = (props: any) => {
+    const dispatch = useDispatch()
+    const { selectTab, showTabs } = bindActionCreators(tabActionCreators, dispatch)
+    const state = useSelector((state: State) => state.tab)
+
+    useEffect(() => {
+        selectTab('tabList')
+        showTabs('tabList', 'tabCreate')
+    }, [window.onload])
+
     return (
         <>
             <ContentHeader title="Ciclos de Pagamentos" small="Cadastro"/>

@@ -1,14 +1,16 @@
 interface ITab {
-    selected: string
+    selected: string,
+    visible: []
 }
 
 type TabAction = {
     type: string,
-    payload: string
+    payload: any
 }
 
 const initialState: ITab = {
-    selected: ''
+    selected: '',
+    visible: []
 }
 
 const tabReducers = (state = initialState, action: TabAction) => {
@@ -17,6 +19,13 @@ const tabReducers = (state = initialState, action: TabAction) => {
             return {
                 ...state,
                 selected: action.payload
+            }
+
+        case 'TAB_SHOWED':
+            console.log(action.payload)
+            return {
+                ...state,
+                visible: action.payload
             }
     
         default:
