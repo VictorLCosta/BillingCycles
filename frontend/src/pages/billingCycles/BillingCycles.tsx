@@ -12,6 +12,7 @@ import { State } from "../../store/storeConfig"
 import * as tabActionCreators from '../../store/actionCreators/tabActions'
 import { useEffect } from "react"
 import { bindActionCreators } from "redux"
+import BillingCyclesList from "../../components/BillingCyclesList"
 
 const BillingCycles = (props: any) => {
     const dispatch = useDispatch()
@@ -36,7 +37,7 @@ const BillingCycles = (props: any) => {
                     </TabsHeader>
                     <TabsContent>
                         <TabContent id="tabList">
-                            Abruebre
+                            <BillingCyclesList />
                         </TabContent>
                         <TabContent id="tabCreate">
                             Atumalaca

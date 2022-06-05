@@ -22,7 +22,6 @@ const tabReducers = (state = initialState, action: TabAction) => {
             }
 
         case 'TAB_SHOWED':
-            console.log(action.payload)
             return {
                 ...state,
                 visible: action.payload
