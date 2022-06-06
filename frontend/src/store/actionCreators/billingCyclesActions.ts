@@ -13,3 +13,13 @@ export const getList = () => {
         })
     }
 }
+
+export const create = (values: any) => {
+    const request = axios.post(`${BASE_URL}/BillingCycle`, values)
+    
+    return (dispatch: Dispatch) => {
+        dispatch({
+            type: 'TEMP'
+        })
+    }
+}

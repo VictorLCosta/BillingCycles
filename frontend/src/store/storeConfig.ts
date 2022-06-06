@@ -6,10 +6,13 @@ import promiseMiddleware from 'redux-promise';
 import tabReducers from "./reducers/tabReducers";
 import billingCyclesReducers from "./reducers/billingCyclesReducers";
 
+import { reducer as formReducer } from "redux-form";
+
 const rootReducer = combineReducers({
     dashboard: dashboardReducers,
     tab: tabReducers,
-    billingCycles: billingCyclesReducers
+    billingCycles: billingCyclesReducers,
+    form: formReducer
 })
 
 function configStore () {

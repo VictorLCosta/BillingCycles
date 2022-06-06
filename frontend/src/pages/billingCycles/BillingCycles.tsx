@@ -7,17 +7,19 @@ import TabsContent from "../../common/tab/TabsContent"
 import TabHeader from "../../common/tab/TabHeader"
 import TabContent from "../../common/tab/TabContent"
 
-import { useDispatch, useSelector } from "react-redux"
-import { State } from "../../store/storeConfig"
+import { useDispatch } from "react-redux"
 import * as tabActionCreators from '../../store/actionCreators/tabActions'
+import * as billingActionCreators from '../../store/actionCreators/billingCyclesActions'
 import { useEffect } from "react"
 import { bindActionCreators } from "redux"
+
 import BillingCyclesList from "../../components/BillingCyclesList"
+import BillingCyclesForm from "../../components/BillingCyclesForm"
 
 const BillingCycles = (props: any) => {
     const dispatch = useDispatch()
     const { selectTab, showTabs } = bindActionCreators(tabActionCreators, dispatch)
-    const state = useSelector((state: State) => state.tab)
+    const { create } = bindActionCreators(billingActionCreators, dispatch)
 
     useEffect(() => {
         selectTab('tabList')
@@ -40,7 +42,7 @@ const BillingCycles = (props: any) => {
                             <BillingCyclesList />
                         </TabContent>
                         <TabContent id="tabCreate">
-                            Atumalaca
+                            <BillingCyclesForm onSubmit={create}/>
                         </TabContent>
                         <TabContent id="tabUpdate">
                             Damsa gatinho damsa

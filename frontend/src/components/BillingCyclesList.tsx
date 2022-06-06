@@ -21,7 +21,7 @@ const BillingCyclesList = () => {
                 <td>{e.month}</td>
                 <td>{e.year}</td>
             </tr>
-        ))
+        )) || []
 
         return rows
     }
