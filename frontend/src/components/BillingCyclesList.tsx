@@ -15,8 +15,8 @@ const BillingCyclesList = () => {
 
     function getRows(list: any)
     {
-        var rows = list.map((e: any) => (
-            <tr>
+        var rows = list.map((e: any, i: any) => (
+            <tr key={i}>
                 <td>{e.name}</td>
                 <td>{e.month}</td>
                 <td>{e.year}</td>

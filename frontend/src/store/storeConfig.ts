@@ -7,12 +7,14 @@ import tabReducers from "./reducers/tabReducers";
 import billingCyclesReducers from "./reducers/billingCyclesReducers";
 
 import { reducer as formReducer } from "redux-form";
+import { reducer as toastrReducer } from "react-redux-toastr";
 
 const rootReducer = combineReducers({
     dashboard: dashboardReducers,
     tab: tabReducers,
     billingCycles: billingCyclesReducers,
-    form: formReducer
+    form: formReducer,
+    toastr: toastrReducer
 })
 
 function configStore () {

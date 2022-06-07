@@ -4,6 +4,7 @@ import Header from '../common/template/Header'
 import SideBar from '../common/template/SideBar'
 import Footer from '../common/template/Footer'
 import Routes from './../routes/Routes';
+import Messages from '../common/msg/Messages';
 
 const App = (props: any) => {
     return (
@@ -14,6 +15,7 @@ const App = (props: any) => {
                 <Routes/>
             </div>
             <Footer/>
+            <Messages/>
         </div>
     )
 }

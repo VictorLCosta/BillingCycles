@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { Dispatch } from 'redux'
 
+import { toastr } from 'react-redux-toastr'
+
 const BASE_URL = 'https://localhost:5001/api'
 
 export const getList = () => {
@@ -15,7 +17,15 @@ export const getList = () => {
 }
 
 export const create = (values: any) => {
-    const request = axios.post(`${BASE_URL}/BillingCycle`, values)
+    axios.post(`${BASE_URL}/BillingCycle`, values)
+        .then(resp => {
+            toastr.success('Sucesso', 'Ciclo criado com sucesso')
+        })
+        .catch(e => {
+            const errors = Object.values(e.response.data).map((e: any) => e[0])
+
+            errors.forEach(error => toastr.error('Erro', error))
+        })
     
     return (dispatch: Dispatch) => {
         dispatch({
