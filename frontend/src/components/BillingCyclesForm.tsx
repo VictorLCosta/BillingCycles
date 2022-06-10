@@ -1,8 +1,15 @@
 import { Field, reduxForm } from "redux-form"
 import FormGroup from "../common/form/FormGroup"
 
+import * as billingActionCreators from "../store/actionCreators/billingCyclesActions"
+import { bindActionCreators } from "redux"
+import { useDispatch } from "react-redux"
+
 const BillingCyclesForm = (props: any) => {
     const { handleSubmit } = props
+
+    const dispatch = useDispatch()
+    const { init } = bindActionCreators(billingActionCreators, dispatch)
 
     return (
         <form role="form" onSubmit={handleSubmit}>
@@ -13,7 +20,7 @@ const BillingCyclesForm = (props: any) => {
             </div>
             <div className="box-footer">
                 <button type="submit" className="btn btn-primary">Submit</button>
-                <button type="button" className="btn btn-secondary ml-2">Voltar</button>
+                <button type="button" className="btn btn-secondary ml-2" onClick={() => init()}>Voltar</button>
             </div>
         </form>
     )

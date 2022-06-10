@@ -55,3 +55,12 @@ export const remove = async (id: string) => {
         console.log(response)
     }
 }
+
+export const init = () => {
+    return (dispatch: any) => {
+        dispatch(showTabs('tabList', 'tabCreate'))
+        dispatch(selectTab('tabList'))
+        dispatch(getList())
+        dispatch(initialize('billingCycleForm', {}))
+    }
+}
