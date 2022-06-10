@@ -6,7 +6,7 @@ import { useEffect } from "react"
 
 const BillingCyclesList = () => {
     const dispatch = useDispatch()
-    const { getList } = bindActionCreators(billingCyclesActionCreators, dispatch)
+    const { getList, showUpdate, remove } = bindActionCreators(billingCyclesActionCreators, dispatch)
     const state = useSelector((state: State) => state.billingCycles)
 
     useEffect(() => {
@@ -20,6 +20,14 @@ const BillingCyclesList = () => {
                 <td>{e.name}</td>
                 <td>{e.month}</td>
                 <td>{e.year}</td>
+                <td>
+                    <button className="btn btn-warning" onClick={() => showUpdate()}>
+                        <i className="fas fa-pencil-alt"></i>
+                    </button>
+                    <button className="btn btn-danger ml-2" onClick={() => remove(e.id)}>
+                        <i className="fas fa-trash-alt"></i>
+                    </button>
+                </td>
             </tr>
         )) || []
 
@@ -33,6 +41,7 @@ const BillingCyclesList = () => {
                     <th>Nome</th>
                     <th>Mês</th>
                     <th>Ano</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>

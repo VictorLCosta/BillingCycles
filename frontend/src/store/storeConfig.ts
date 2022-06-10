@@ -1,10 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import dashboardReducers from './reducers/dashboardReducers';
-import promiseMiddleware from 'redux-promise';
 import tabReducers from "./reducers/tabReducers";
 import billingCyclesReducers from "./reducers/billingCyclesReducers";
+
+import thunk from 'redux-thunk'
+import promiseMiddleware from 'redux-promise';
 
 import { reducer as formReducer } from "redux-form";
 import { reducer as toastrReducer } from "react-redux-toastr";

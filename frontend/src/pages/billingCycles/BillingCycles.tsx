@@ -45,7 +45,7 @@ const BillingCycles = (props: any) => {
                             <BillingCyclesForm onSubmit={create}/>
                         </TabContent>
                         <TabContent id="tabUpdate">
-                            Damsa gatinho damsa
+                            <BillingCyclesForm/>
                         </TabContent>
                     </TabsContent>
                 </Tabs>
