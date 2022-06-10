@@ -13,9 +13,10 @@ const BillingCyclesForm = (props: any) => {
             </div>
             <div className="box-footer">
                 <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="button" className="btn btn-secondary ml-2">Voltar</button>
             </div>
         </form>
     )
 }
 
-export default reduxForm({form: 'billingCycleForm'})(BillingCyclesForm)
+export default reduxForm({form: 'billingCycleForm', destroyOnUnmount: false})(BillingCyclesForm)

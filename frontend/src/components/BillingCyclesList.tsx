@@ -21,7 +21,7 @@ const BillingCyclesList = () => {
                 <td>{e.month}</td>
                 <td>{e.year}</td>
                 <td>
-                    <button className="btn btn-warning" onClick={() => showUpdate()}>
+                    <button className="btn btn-warning" onClick={() => showUpdate(e)}>
                         <i className="fas fa-pencil-alt"></i>
                     </button>
                     <button className="btn btn-danger ml-2" onClick={() => remove(e.id)}>
