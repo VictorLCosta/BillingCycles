@@ -1,18 +1,17 @@
 import Grid from './../common/layout/Grid';
 import { Field } from 'redux-form';
+import Input from '../common/form/Input';
 
 const CreditList = (props: any) => {
 
     function renderRows () {
-        const rows = (
+        const list = props.list || []
+        return list.map((el: any, i: any) => (
             <tr>
-                <td><Field name="" component="input"/></td>
-                <td><Field name="" component="input"/></td>
-                <td><Field name="" component="input"/></td>
+                <td><Field name={`credits[${i}].name`} component={Input} type="text" readOnly={props.readOnly}/></td>
+                <td><Field name={`credits[${i}].value`} component={Input} type="number" readOnly={props.readOnly}/></td>
             </tr>
-        )
-
-        return rows
+        ))
     }
 
     return (

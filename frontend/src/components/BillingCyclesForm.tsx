@@ -1,16 +1,24 @@
 import { Field, reduxForm } from "redux-form"
 import FormGroup from "../common/form/FormGroup"
+import CreditList from "./CreditList"
 
 import * as billingActionCreators from "../store/actionCreators/billingCyclesActions"
 import { bindActionCreators } from "redux"
 import { useDispatch } from "react-redux"
-import CreditList from "./CreditList"
+
+import { useEffect } from "react"
 
 const BillingCyclesForm = (props: any) => {
     const { handleSubmit } = props
 
     const dispatch = useDispatch()
-    const { init } = bindActionCreators(billingActionCreators, dispatch)
+    const { init, getList, getCycle } = bindActionCreators(billingActionCreators, dispatch)
+
+    var list = []
+
+    useEffect(() => {
+        console.log(props)
+    }, [window.onload])
 
     return (
         <form role="form" onSubmit={handleSubmit}>

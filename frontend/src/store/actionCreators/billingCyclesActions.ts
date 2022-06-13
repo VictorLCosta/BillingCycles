@@ -18,6 +18,17 @@ export const getList = () => {
     }
 }
 
+export const getCycle = (id: string) => {
+    const request = axios.get(`${BASE_URL}/BillingCycle/${id}`)
+
+    return (dispatch: Dispatch) => {
+        dispatch({
+            type: "BILLING_CYCLE_SELECTED",
+            payload: request
+        })
+    }
+}
+
 export const create = async (values: any) => {
     const response = await axios.post(`${BASE_URL}/BillingCycle`, values)
 
